@@ -4,7 +4,7 @@ An end-to-end Machine Learning web application designed to predict the likelihoo
 
 ## 🚀 Live Demo
 
-> [View Live App.. Coming Soon..](https://your-app-link.streamlit.app)
+> [View Live App ](https://credit-risk-predictor-ai-bnbqqfdhappkzx2eyseydeu.streamlit.app)
 
 ## 📊 Project Overview
 Credit risk is a critical challenge for financial institutions. This project uses a **Random Forest Classifier** to assess whether a loan applicant is likely to default based on features like income, age, loan amount, and historical credit behavior.
