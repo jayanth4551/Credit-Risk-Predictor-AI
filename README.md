@@ -6,7 +6,7 @@ This project demonstrates a complete data science pipeline—from Exploratory Da
 ---
 
 ## 🚀 Live Demo
-👉 [View Live App](#)  <!-- Replace with your Streamlit link -->
+👉 [View Live App](https://credit-risk-predictor-ai-bnbqqfdhappkzx2eyseydeu.streamlit.app/)  <!-- Replace with your Streamlit link -->
 
 ---
 
