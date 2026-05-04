@@ -14,8 +14,9 @@ model, model_columns = load_assets()
 
 # 2. UI Header
 st.set_page_config(page_title="FinGuard AI", layout="centered")
-st.title("🏦 FinGuard: Credit Risk Predictor")
-st.write("Fill in the applicant details below to check loan eligibility.")
+st.title("💳 FinGuard AI - Credit Risk Predictor")
+st.markdown("Predict loan default probability using Machine Learning")
+st.divider()
 
 # 3. User Inputs
 col1, col2 = st.columns(2)
@@ -58,10 +59,26 @@ if st.button("Analyze Risk"):
     # 5. Make Prediction
     prediction = model.predict(input_df)
     probability = model.predict_proba(input_df)[0][1] # Probability of default
+    
+    st.subheader("📋 Input Summary")
+    st.write(input_df)
+
 
     # 6. Display Result
     st.divider()
+    st.subheader("📊 Prediction Result")
+
+    st.write(f"**Default Probability:** {probability:.2%}")
+
     if prediction[0] == 0:
-        st.success(f"### ✅ Loan Approved!\nProbability of default: {probability:.2%}")
+        st.success("✅ Loan Approved (Low Risk)")
     else:
-        st.error(f"### ❌ Loan Rejected (High Risk)\nProbability of default: {probability:.2%}")
+        st.error("❌ Loan Rejected (High Risk)")
+
+    # 7. Risk Level Indicator
+    if probability < 0.3:
+        st.info("🟢 Low Risk")
+    elif probability < 0.6:
+        st.warning("🟡 Medium Risk")
+    else:
+        st.error("🔴 High Risk")
